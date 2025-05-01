@@ -692,6 +692,7 @@
     <script src="assets/js/main.js"></script>
 
     <script src="assets/constants/portfolio.js"></script>
+    
     <script>
       const container = document.getElementById("portfolioContainer");
 
@@ -726,6 +727,11 @@
           itemSelector: ".portfolio-item",
           layoutMode: "masonry",
           transitionDuration: "0.6s",
+        });
+
+        // Ensure images are loaded before layout
+        imagesLoaded(container, function () {
+          iso.layout();
         });
       }
 
